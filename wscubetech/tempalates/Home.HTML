@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .property-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-details {
+            padding: 20px;
+        }
+
+        .property-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .property-price {
+            font-size: 16px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .property-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Real Estate Listings</h1>
+    <div class="property-grid">
+        <div class="property-card">
+            <img class="property-image" src="property1.jpg" alt="Property Image">
+            <div class="property-details">
+                <div class="property-title">Beautiful Home in the Suburbs</div>
+                <div class="property-price">$300,000</div>
+                <div class="property-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nunc eget massa tempor convallis.</div>
+                <button onclick="openModal('property1.jpg', 'Beautiful Home in the Suburbs', '$300,000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nunc eget massa tempor convallis.')">View Details</button>
+            </div>
+        </div>
+        <!-- More property cards here -->
+    </div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Property Image" style="width: 100%; border-radius: 10px;">
+        <div class="property-details">
+            <div id="modal-title" class="property-title"></div>
+            <div id="modal-price" class="property-price"></div>
+            <div id="modal-description" class="property-description"></div>
+        </div>
+    </div>
+</div>
+<div>
+
+    <form></Form>>.
+
+</div>
+
+<script>
+    function openModal(imageSrc, title, price, description) {
+        document.getElementById('modal-image').src = imageSrc;
+        document.getElementById('modal-title').innerHTML = title;
+        document.getElementById('modal-price').innerHTML = price;
+        document.getElementById('modal-description').innerHTML = description;
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
